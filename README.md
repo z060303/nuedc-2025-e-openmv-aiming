@@ -2,6 +2,8 @@
 
 本仓库整理的是 [2025 年全国大学生电子设计竞赛 E 题“简易自行瞄准装置”](https://nuedc.org/problems/2025_E%E9%A2%98_%E7%AE%80%E6%98%93%E8%87%AA%E8%A1%8C%E7%9E%84%E5%87%86%E8%A3%85%E7%BD%AE.pdf)中的**视觉瞄准模块代码**。OpenMV 作为视觉上位机，识别画面中最大的红色色块，把中心像素坐标发给 STM32F103；STM32 使用两路 PID 控制二维云台，让目标尽量回到画面中心。
 
+想了解每一步怎么算、每个参数在哪里起作用，可直接阅读 [视觉瞄准算法具体实现](docs/algorithm.md)。
+
 > 请按源码理解硬件：**水平轴使用 Emm V5 协议步进电机，俯仰轴使用 270° 舵机**。本仓库没有寻迹小车、MSPM0 小车控制、激光笔驱动和整题测试数据，因此它是 E 题的瞄准模块实现，不能当作完整赛题方案。
 
 ## 与 E 题要求的对应关系
@@ -43,6 +45,7 @@ flowchart LR
 | [`firmware/Core/Src/Emm_v5.c`](firmware/Core/Src/Emm_v5.c) | 本项目所需的最小步进电机速度指令编码器 |
 | `firmware/2DServoGP.ioc` | STM32CubeMX 外设与引脚配置 |
 | `firmware/Drivers/` | 编译所需的 ST HAL 和 CMSIS 组件，保留各自许可证 |
+| [`docs/algorithm.md`](docs/algorithm.md) | 从红色色块检测到两轴控制的算法实现、公式与计算示例 |
 | [`docs/hardware.md`](docs/hardware.md) | 接线、电源、校准与联调 |
 | [`docs/protocol.md`](docs/protocol.md) | 串口格式和参数解释 |
 
