@@ -100,6 +100,26 @@ cmake --build --preset Release
 - 俯仰轴是舵机，当前 TIM1 周期为 40 ms（25 Hz）。不同舵机的可用周期及脉宽必须实测确认。
 - 固件中的 PID 数值是该样机的经验参数。电机反向或触及行程时必须重新调参并增加限位保护。
 
+## 效果视频
+
+
+https://github.com/user-attachments/assets/78d83c38-70d4-44ed-8ede-bb076bd397c8
+
+
+
+https://github.com/user-attachments/assets/c61b761d-8e19-4a58-81c2-91121eade2d1
+
+
+
+https://github.com/user-attachments/assets/1bcb02c7-9261-4df0-9753-c3c7f81bc61d
+
+
+
+后续能完整绕圈瞄准测评忘记拍视频，下面视频为粗调效果。
+
+https://github.com/user-attachments/assets/bc4dc680-61da-425d-b1a9-41698282770f
+
+
 ## 许可
 
 本仓库自写的应用代码和文档以 [MIT License](LICENSE) 开源。`firmware/Drivers/` 的 ST HAL 与 CMSIS 文件保留原许可证；详见 [第三方组件说明](THIRD_PARTY_NOTICES.md)。
