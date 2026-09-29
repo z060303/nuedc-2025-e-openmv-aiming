@@ -1,0 +1,11 @@
+firmware/build/
+firmware/cmake-build-*/
+.idea/
+__pycache__/
+*.pyc
+*.log
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
